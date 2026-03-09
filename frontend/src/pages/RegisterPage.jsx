@@ -19,6 +19,7 @@ function RegisterPage() {
               <input
                 type="text"
                 placeholder="Usuario *"
+                max={100}
                 required
               />
               <input
@@ -29,6 +30,8 @@ function RegisterPage() {
               <input
                 type="password"
                 placeholder="Senha *"
+                min={8}
+                max={100}
                 required
               />
               <button>
