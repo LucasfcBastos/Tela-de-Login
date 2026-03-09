@@ -1,0 +1,43 @@
+footer {
+    background-color: var(--ColorFooter);
+    padding: 1em;
+    width: calc(100% - 2em);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+footer .top {
+    display: flex;
+    align-items: center;
+}
+
+footer .top svg {
+    height: 3em;
+    width: 4em;
+}
+
+footer .medio {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .medio p#title {
+    margin-bottom: var(--px12);
+}
+
+footer .bottom {
+    text-align: center;
+}
+
+@media (max-width: 683px) {
+
+footer .medio {
+    display: flex;
+    flex-direction: column;
+    gap: var(--px25);
+}}

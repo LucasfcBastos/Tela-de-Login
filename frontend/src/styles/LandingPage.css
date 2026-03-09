@@ -1,0 +1,32 @@
+.LandingPage section {
+    background-color: var(--ColorTheme);
+    position: fixed;
+    top: 0;
+    width: calc(100% - 1em);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.LandingPage section svg {
+    height: 2.5em;
+}
+
+.LandingPage main {
+    text-align: center;
+    margin-top: 4.5em;
+    height: calc(100dvh - 4.5em);
+    align-content: center;
+    justify-items: center;
+}
+
+.LandingPage main h1 {
+    margin-bottom: var(--px25);
+}
+
+.LandingPage main .btns {
+    display: flex;
+    justify-content: center;
+    gap: 1.4em;
+}

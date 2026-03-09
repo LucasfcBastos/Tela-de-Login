@@ -1,0 +1,13 @@
+button.redi {
+    background-color: transparent;
+    border: var(--px3) solid var(--ColorTheme);
+    padding: var(--px6);
+    border-radius: var(--px12);
+    color: var(--ColorText);
+    min-width: 10em;
+}
+
+button.redi:hover {
+    background-color: var(--ColorTheme);
+    color: var(--ColorBackground);
+}

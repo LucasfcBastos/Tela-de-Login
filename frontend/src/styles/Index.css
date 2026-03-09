@@ -5,18 +5,27 @@
 
 :root {
   --FontSize: 5em;
+
+  --px12: 0.75em;
+  --px6: 0.37em;
+  --px3: 0.18em;
+
+  --px50: 3.12em;
+  --px25: 1.56em;
 }
 
 .light {
   --ColorTheme: #8FD0EF;
   --ColorBackground: #ffffff;
   --ColorText: #000000;
+  --ColorFooter: #A8A8A8;
 }
 
 .dark {
   --ColorTheme: #867C9F;
   --ColorBackground: #212558;
   --ColorText: #ffffff;
+  --ColorFooter: #565656;
 }
 
 body {
@@ -26,4 +35,15 @@ body {
   font-family: "Anta";
 }
 
-/* 683 */
+h1,
+p {
+  margin: 0;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+button {
+  font-family: "Anta";
+}

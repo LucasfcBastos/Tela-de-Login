@@ -43,7 +43,7 @@ cd frontend/
 
 Instalar as independencias:
 ```bash
-npm install axios react-router-dom
+npm install axios react-router-dom vite-plugin-svgr
 ```
 
 Rodar o projeto:
