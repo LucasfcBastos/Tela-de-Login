@@ -35,9 +35,9 @@ footer .bottom {
 }
 
 @media (max-width: 683px) {
-
-footer .medio {
-    display: flex;
-    flex-direction: column;
-    gap: var(--px25);
-}}
+    footer .medio {
+        display: flex;
+        flex-direction: column;
+        gap: var(--px25);
+    }
+}

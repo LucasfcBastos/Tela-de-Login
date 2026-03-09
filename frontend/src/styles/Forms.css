@@ -1,0 +1,30 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--px25);
+    align-items: center;
+}
+
+form input {
+    border: var(--px3) solid var(--ColorFooter);
+    border-radius: var(--px6);
+    font-family: "Anta";
+    font-size: 1em;
+    padding: 10px 14px;
+    width: 80%;
+}
+
+form button {
+    background-color: var(--ColorTheme);
+    border: var(--px3) solid var(--ColorTheme);
+    padding: var(--px6);
+    border-radius: var(--px6);
+    color: var(--ColorBackground);
+    width: 10em;
+    cursor: pointer;
+}
+
+form button:hover {
+    border: var(--px3) solid var(--ColorFooter);
+    color: var(--ColorBackground);
+}

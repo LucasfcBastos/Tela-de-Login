@@ -1,0 +1,48 @@
+.AuthPage {
+    display: flex;
+}
+
+.AuthPage .camp-auth {
+    width: calc(50vw);
+    height: calc(100dvh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.AuthPage .camp-auth .card-auth {
+    background-color: var(--ColorBackground);
+    border-radius: var(--px12);
+    width: 100%;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0,0,0);
+    display: flex;
+    flex-direction: column;
+    gap: var(--px25);
+    padding: var(--px25);
+    min-width: 300px;
+    width: 60%;
+    z-index: 1;
+}
+
+.AuthPage .camp-auth .card-auth a {
+    color: var(--ColorText);
+}
+
+@media (max-width: 683px) {
+    .AuthPage .camp-img {
+        display: none;
+    }
+
+    .AuthPage .camp-auth {
+        width: calc(100% - 8em);
+        padding: 2em 4em;
+        height: calc(100dvh - 4em);
+    }
+
+    .AuthPage .camp-auth .card-auth {
+        gap: var(--px25);
+        padding: var(--px25);
+    }
+}

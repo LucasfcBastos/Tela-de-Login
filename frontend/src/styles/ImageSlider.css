@@ -1,0 +1,13 @@
+.slider img {
+    position: absolute;
+    bottom: 0em;
+    right: 9vw;
+    width: 22.5em;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.slider img.active {
+    opacity: 1;
+}
