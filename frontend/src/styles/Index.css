@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Anta";
+    src: url("../assets/font/Anta-Regular.ttf") format("truetype");
+}
+
 :root {
   --FontSize: 5em;
 }
@@ -18,4 +23,7 @@ body {
   background-color: var(--ColorBackground);
   color: var(--ColorText);
   margin: 0em;
+  font-family: "Anta";
 }
+
+/* 683 */
