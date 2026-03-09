@@ -31,9 +31,14 @@ Entra dentro do back:
 cd backend/
 ```
 
+Instalar as independencias:
+```bash
+npm install express cors bcrypt jsonwebtoken
+```
+
 Rodar o servidor:
 ```bash
-npm run dev
+node server.js
 ```
 ---
 Em outro bash, entrar dentro do front:
