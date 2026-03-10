@@ -15,7 +15,7 @@ export function AppRoutes() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
 
-        <Route path="/deshbord" element={<PrivateRoute><Deshbord /></PrivateRoute>} />
+        <Route path="/dashboard" element={<PrivateRoute><Deshbord /></PrivateRoute>} />
 
         <Route path="/error" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
