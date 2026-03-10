@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken")
 
 const { createUser, findUserByEmail } = require("../../models/userModel")
 
-const SECRET = "segredo"
+const SECRET = process.env.JWT_SECRET
 
 exports.register = async (req, res) => {
 

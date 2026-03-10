@@ -1,8 +1,17 @@
+import { useState } from "react"
+import { api } from "../services/api"
+import { useNavigate } from "react-router-dom"
 import "../styles/Auth.css"
 import "../styles/Forms.css"
 import Art from "../components/ImageSlider"
 
 function LoginPage() {
+
+  const navigate = useNavigate()
+
+  const [name,setName] = useState("")
+  const [password,setPassword] = useState("")
+
   return (
     <>
       <main className="AuthPage">

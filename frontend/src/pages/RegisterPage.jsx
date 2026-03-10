@@ -14,13 +14,25 @@ function RegisterPage() {
 
     e.preventDefault()
 
-    await api.post("/auth/register",{
-      name,
-      email,
-      password
-    })
+    try {
+      await api.post("/auth/register",{
+        name,
+        email,
+        password
+      })
+  
+      alert("Usuário criado")
+      window.location.href = "/login"
+      
+    } catch (err) {
 
-    alert("Usuário criado")
+      if (err.response) {
+        alert(err.response.data.message)
+      } else {
+        alert("Erro ao conectar com servidor")
+      }
+
+    }
   }
 
   return (
@@ -39,7 +51,7 @@ function RegisterPage() {
               <input
                 type="text"
                 placeholder="Usuario *"
-                max={100}
+                maxLength={100}
                 required
                 onChange={e=>setName(e.target.value)}
               />
@@ -52,8 +64,8 @@ function RegisterPage() {
               <input
                 type="password"
                 placeholder="Senha *"
-                min={8}
-                max={100}
+                minLength={8}
+                maxLength={100}
                 required
                 onChange={e=>setPassword(e.target.value)}
               />

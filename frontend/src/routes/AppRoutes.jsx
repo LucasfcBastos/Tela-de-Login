@@ -5,6 +5,8 @@ import RegisterPage from "../pages/RegisterPage";
 import Deshbord from "../pages/Deshbord";
 import NotFound from "../pages/NotFound";
 
+import PrivateRoute from "./components/PrivateRoute"
+
 export function AppRoutes() {
   return (
     <BrowserRouter>
@@ -12,7 +14,8 @@ export function AppRoutes() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/deshbord" element={<Deshbord />} />
+
+        <Route path="/deshbord" element={<PrivateRoute><Deshbord /></PrivateRoute>} />
 
         <Route path="/error" element={<NotFound />} />
         <Route path="*" element={<NotFound />} />
