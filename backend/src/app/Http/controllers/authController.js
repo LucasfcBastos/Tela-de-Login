@@ -9,6 +9,12 @@ exports.register = async (req, res) => {
 
     const { name, email, password } = req.body
 
+    if (!name || !email || !password) {
+        return res.status(400).json({
+            message: "Requisição inválida"
+        })
+    }
+
     const userExists = findUserByEmail(email)
 
     if (userExists) {
@@ -29,6 +35,12 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
 
     const { name, password } = req.body
+
+    if (!name || !password) {
+        return res.status(400).json({
+            message: "Requisição inválida"
+        })
+    }
 
     const user = findUserByName(name)
 

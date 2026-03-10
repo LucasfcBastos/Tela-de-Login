@@ -16,7 +16,7 @@ function RegisterPage() {
 
     try {
       
-      await api.post("/auth/register",{
+      await api.post("/register",{
         name,
         email,
         password
@@ -53,13 +53,11 @@ function RegisterPage() {
                 type="text"
                 placeholder="Usuario *"
                 maxLength={100}
-                required
                 onChange={e=>setName(e.target.value)}
               />
               <input
                 type="email"
                 placeholder="Email *"
-                required
                 onChange={e=>setEmail(e.target.value)}
               />
               <input
@@ -67,7 +65,6 @@ function RegisterPage() {
                 placeholder="Senha *"
                 minLength={8}
                 maxLength={100}
-                required
                 onChange={e=>setPassword(e.target.value)}
               />
               <button type="submit" >

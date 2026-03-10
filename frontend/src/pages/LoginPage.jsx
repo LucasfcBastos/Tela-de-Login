@@ -18,7 +18,7 @@ function LoginPage() {
 
     try {
 
-      const response = await api.post("/auth/login",{
+      const response = await api.post("/login",{
         name,
         password
       })
@@ -59,13 +59,11 @@ function LoginPage() {
               <input
                 type="Usuario"
                 placeholder="Usuario *"
-                required
                 onChange={e=>setName(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="Senha *"
-                required
                 onChange={e=>setPassword(e.target.value)}
               />
               <button type="submit">
