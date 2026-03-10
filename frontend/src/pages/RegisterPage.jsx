@@ -1,8 +1,28 @@
+import { useState } from "react"
+import { api } from "../services/api"
 import "../styles/Auth.css"
 import "../styles/Forms.css"
 import Art from "../components/ImageSlider"
 
 function RegisterPage() {
+
+  const [name,setName] = useState("")
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+
+  const handleRegister = async (e) => {
+
+    e.preventDefault()
+
+    await api.post("/auth/register",{
+      name,
+      email,
+      password
+    })
+
+    alert("Usuário criado")
+  }
+
   return (
     <>
       <main className="AuthPage">
@@ -10,22 +30,24 @@ function RegisterPage() {
           <div className="card-auth">
             <a href="/">← Voltar para home</a>
             <h1>
-                Você está fazendo cadastro
+              Você está fazendo cadastro
             </h1>
             <p>
               * indica um campo obrigatório
             </p>
-            <form>
+            <form onSubmit={handleRegister}>
               <input
                 type="text"
                 placeholder="Usuario *"
                 max={100}
                 required
+                onChange={e=>setName(e.target.value)}
               />
               <input
                 type="email"
                 placeholder="Email *"
                 required
+                onChange={e=>setEmail(e.target.value)}
               />
               <input
                 type="password"
@@ -33,8 +55,9 @@ function RegisterPage() {
                 min={8}
                 max={100}
                 required
+                onChange={e=>setPassword(e.target.value)}
               />
-              <button>
+              <button type="submit" >
                 <p>
                   Cadastrar
                 </p>

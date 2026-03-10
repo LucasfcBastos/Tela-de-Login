@@ -1,0 +1,14 @@
+section {
+    background-color: var(--ColorTheme);
+    position: fixed;
+    top: 0;
+    width: calc(100% - 1em);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section svg {
+    height: 2.5em;
+}
