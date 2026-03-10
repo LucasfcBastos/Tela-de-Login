@@ -13,18 +13,18 @@ const findUserName = (res) => {
     return findUserByName(res)
 }
 
-const createNewUser = (user) => {
-    const hash = bcrypt.hash(user.password, 10)
+const createNewUser = async (user) => {
+    const hash = await bcrypt.hash(user.password, 10)
 
     createUser({
         name: user.name,
         email: user.email,
-        password: user.password=hash,
+        password: hash,
     })
 }
 
-const confirmPassword = (pass, pass_user) => {
-    return bcrypt.compare(pass, pass_user)
+const confirmPassword = async (pass, pass_user) => {
+    return await bcrypt.compare(pass, pass_user)
 }
 
 const createToken = (user) => {
