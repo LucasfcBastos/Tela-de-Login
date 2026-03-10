@@ -5,7 +5,7 @@ import RegisterPage from "../pages/RegisterPage";
 import Deshbord from "../pages/Deshbord";
 import NotFound from "../pages/NotFound";
 
-import PrivateRoute from "./components/PrivateRoute"
+import PrivateRoute from "./PrivateRoute"
 
 export function AppRoutes() {
   return (

@@ -12,6 +12,37 @@ function LoginPage() {
   const [name,setName] = useState("")
   const [password,setPassword] = useState("")
 
+  const handleLogin = async (e) => {
+
+    e.preventDefault()
+
+    try {
+
+      const response = await api.post("/auth/login",{
+        name,
+        password
+      })
+
+      const { token, user } = response.data
+
+      localStorage.setItem("token", token)
+      localStorage.setItem("user", JSON.stringify(user))
+
+      navigate("/dashboard")
+
+    } catch (err) {
+
+      if(err.response){
+        alert(err.response.data.message)
+      } else {
+        alert("Erro ao conectar com servidor")
+      }
+
+    }
+
+  }
+
+
   return (
     <>
       <main className="AuthPage">
@@ -24,18 +55,20 @@ function LoginPage() {
             <p>
               * indica um campo obrigatório
             </p>
-            <form>
+            <form onSubmit={handleLogin}>
               <input
                 type="Usuario"
                 placeholder="Usuario *"
                 required
+                onChange={e=>setName(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="Senha *"
                 required
+                onChange={e=>setPassword(e.target.value)}
               />
-              <button>
+              <button type="submit">
                 <p>
                   Entrar
                 </p>

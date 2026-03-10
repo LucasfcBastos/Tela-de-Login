@@ -33,7 +33,7 @@ cd backend/
 
 Instalar as independencias:
 ```bash
-npm install express cors bcrypt jsonwebtoken
+npm install express cors bcrypt jsonwebtoken dotenv
 ```
 
 Rodar o servidor:

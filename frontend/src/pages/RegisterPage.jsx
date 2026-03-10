@@ -15,6 +15,7 @@ function RegisterPage() {
     e.preventDefault()
 
     try {
+      
       await api.post("/auth/register",{
         name,
         email,

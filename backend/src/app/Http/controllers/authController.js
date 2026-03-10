@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 
-const { createUser, findUserByEmail } = require("../../models/userModel")
+const { createUser, findUserByEmail, findUserByName } = require("../../models/userModel")
 
 const SECRET = process.env.JWT_SECRET
 
@@ -28,9 +28,9 @@ exports.register = async (req, res) => {
 
 exports.login = async (req, res) => {
 
-    const { email, password } = req.body
+    const { name, password } = req.body
 
-    const user = findUserByEmail(email)
+    const user = findUserByName(name)
 
     if (!user) {
         return res.status(404).json({ message: "Usuário não encontrado" })
@@ -42,7 +42,7 @@ exports.login = async (req, res) => {
         return res.status(401).json({ message: "Senha inválida" })
     }
 
-    const token = jwt.sign({ email }, SECRET, { expiresIn: "1h" })
+    const token = jwt.sign({ name }, SECRET, { expiresIn: "1h" })
 
     res.json({
         token,
