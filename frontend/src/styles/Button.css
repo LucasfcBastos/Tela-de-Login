@@ -1,13 +1,16 @@
-button.redi {
+button.redi,
+.Deshbord .frame-user button {
     background-color: transparent;
     border: var(--px3) solid var(--ColorTheme);
     padding: var(--px6);
     border-radius: var(--px12);
     color: var(--ColorText);
     min-width: 10em;
+    cursor: pointer;
 }
 
-button.redi:hover {
+button.redi:hover,
+.Deshbord .frame-user button:hover {
     background-color: var(--ColorTheme);
     color: var(--ColorBackground);
 }

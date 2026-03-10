@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom"
-import "../styles/Deshbord.css"
+import "../styles/Dashboard.css"
 import Section from '../components/Section'
 import Footer from '../components/Footer'
 
-function Deshbord() {
+function Dashboard() {
 
   const navigate = useNavigate()
 
@@ -18,17 +18,15 @@ function Deshbord() {
   }
 
   return (
-    <div className='Deshbord'>
+    <div className='Dashboard'>
         <Section />
         <main>
-
-          <h1>Bem vindo {user?.name}</h1>
-
-          <p>Email: {user?.email}</p>
-
-          <button onClick={handleLogout}>
-            Sair
-          </button>
+          <div className="frame-user">
+            <h1>Bem vindo {user?.name}</h1>
+            <button onClick={handleLogout}>
+              Sair
+            </button>
+          </div>
 
         </main>
         <Footer />
@@ -36,4 +34,4 @@ function Deshbord() {
   );
 }
 
-export default Deshbord;
+export default Dashboard;

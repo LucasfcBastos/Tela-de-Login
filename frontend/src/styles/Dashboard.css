@@ -1,0 +1,22 @@
+.Dashboard main {
+    margin-top: 4.5em;
+    height: calc(100dvh - 7.7em);
+    padding: var(--px25);
+}
+
+.Dashboard main .frame-user {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 683px) {
+    .Dashboard main {
+        height: calc(100dvh - 7.5em);
+    }
+    
+    .Dashboard main .frame-user {
+        flex-direction: column;
+        gap: var(--px12);
+        text-align: center;
+    }
+}
