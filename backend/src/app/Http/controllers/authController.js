@@ -1,48 +1,54 @@
-const users = require("../../models/userModel")
+const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 
-const SECRET = "segredo_super"
+const { createUser, findUserByEmail } = require("../../models/userModel")
 
-exports.register = (req, res) => {
+const SECRET = "segredo"
+
+exports.register = async (req, res) => {
 
     const { name, email, password } = req.body
 
     const userExists = findUserByEmail(email)
 
-    if(userExists){
-        return res.status(400).json({message:"Usuário já existe"})
+    if (userExists) {
+        return res.status(400).json({ message: "Usuário já existe" })
     }
 
-    users.push({
+    const hash = await bcrypt.hash(password, 10)
+
+    createUser({
         name,
         email,
-        password
+        password: hash
     })
 
-    res.json({message:"Usuário criado"})
+    res.json({ message: "Usuário criado" })
 }
 
-exports.login = (req, res) => {
+exports.login = async (req, res) => {
 
     const { email, password } = req.body
 
-    const user = users.find(u => u.email === email)
+    const user = findUserByEmail(email)
 
-    if(!user){
-        return res.status(404).json({message:"Usuário não encontrado"})
+    if (!user) {
+        return res.status(404).json({ message: "Usuário não encontrado" })
     }
 
-    if(user.password !== password){
-        return res.status(401).json({message:"Senha incorreta"})
+    const valid = await bcrypt.compare(password, user.password)
+
+    if (!valid) {
+        return res.status(401).json({ message: "Senha inválida" })
     }
 
-    const token = jwt.sign(
-        { email: user.email },
-        SECRET,
-        { expiresIn: "1h" }
-    )
+    const token = jwt.sign({ email }, SECRET, { expiresIn: "1h" })
 
     res.json({
-        token
+        token,
+        user: {
+            name: user.name,
+            email: user.email
+        }
     })
 }

@@ -1,13 +1,30 @@
-.slider img {
+.slider .fund {
     position: absolute;
-    bottom: 0em;
-    right: 9vw;
-    width: 22.5em;
-    height: auto;
-    opacity: 0;
-    transition: opacity 1s ease-out;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.slider img.active {
+.slider .fund img {
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: var(--px12);
+}
+
+.slider .aget img {
+    position: absolute;
+    bottom: 0em;
+    right: 1em;
+    width: 50%;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    z-index: 0;
+}
+
+.slider .aget img.active {
     opacity: 1;
 }
