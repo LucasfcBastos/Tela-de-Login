@@ -18,5 +18,6 @@
         flex-direction: column;
         gap: var(--px12);
         text-align: center;
+        align-items: center;
     }
 }

@@ -23,7 +23,7 @@ function Dashboard() {
         <main>
           <div className="frame-user">
             <h1>Bem vindo {user?.name}</h1>
-            <button onClick={handleLogout}>
+            <button style={{ width: "15em" }} onClick={handleLogout}>
               Sair
             </button>
           </div>

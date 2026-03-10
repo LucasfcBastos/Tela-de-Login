@@ -1,5 +1,5 @@
 button.redi,
-.Deshbord .frame-user button {
+.Dashboard .frame-user button {
     background-color: transparent;
     border: var(--px3) solid var(--ColorTheme);
     padding: var(--px6);
@@ -10,7 +10,7 @@ button.redi,
 }
 
 button.redi:hover,
-.Deshbord .frame-user button:hover {
+.Dashboard .frame-user button:hover {
     background-color: var(--ColorTheme);
     color: var(--ColorBackground);
 }
